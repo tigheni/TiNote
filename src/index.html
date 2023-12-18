@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>To Do List</title>
+        <script
+            src="https://kit.fontawesome.com/2399160396.js"
+            crossorigin="anonymous"
+        ></script>
+        <link rel="icon" type="image/x-icon" href="./images/t.png" />
+    </head>
+
+    <body>
+        <section class="side-bar">
+            <i class="fa-regular fa-note-sticky"></i>
+            <i class="fa-regular fa-star"></i>
+            <i class="fa-regular fa-trash-can"></i>
+        </section>
+        <!--  -->
+        <!--  -->
+        <!--  -->
+        <section class="left-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <i
+                            class="fa-regular fa-note-sticky"
+                            style="font-size: 25px; color: lightslategray"
+                        ></i>
+                        <h3 class="whereiam">Notes</h3>
+                    </div>
+                    <i class="fa-solid fa-circle-plus btn-add-note"></i>
+                </div>
+                <div class="search-bar">
+                    <input
+                        type="search"
+                        class="search-input"
+                        placeholder="search"
+                    />
+                </div>
+            </div>
+            <div id="notes-card" class="items">
+                <div class="card">
+                    <i class="fa-solid fa-bars"></i>
+                    <div>
+                        <h2 class="note-heading">complexity</h2>
+                        <h5 class="note-resumé">
+                            If the input halves at each step, its likely O(LogN)
+                            or O(NlogN)
+                        </h5>
+                        <p class="note-date">2002/02/08</p>
+                    </div>
+                </div>
+                <span class="hrByMe"></span>
+            </div>
+        </section>
+        <!--  -->
+        <!--  -->
+        <!--  -->
+        <section class="right-section">
+            <div class="note-head">
+                <div>
+                    <input
+                        type="text"
+                        class="note-title-input"
+                        value="complexity"
+                    />
+                    <input
+                        type="text"
+                        class="note-tags-input"
+                        placeholder="Link tags,files,notes..."
+                    />
+                </div>
+                <img src="./images/broche.png" alt="pin" class="pin" />
+            </div>
+            <div class="note-area">
+                <textarea name="note-area" id="note-area"></textarea>
+            </div>
+        </section>
+    </body>
+</html>
