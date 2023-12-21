@@ -174,8 +174,8 @@ body {
     outline: none;
     font-family: "kanit", sans-serif;
 }
-.note-head {
-    display: none;
+.uppernote {
+    display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 1rem;
@@ -193,15 +193,20 @@ body {
     font-family: "kanit", sans-serif;
 }
 
-.pin {
+.pin, .done {
     width: 35px;
     height: 35px;
     cursor: pointer;
     transition: all 0.2s ease 0s;
+    padding-left:5px ;
 }
 .pin:hover {
     transform: rotate(-45deg);
 }
+.done:hover {
+    transform: scale(1.2);
+}
+
 
 .note-area {
     padding: 1rem 2rem 0 2rem;
@@ -213,7 +218,11 @@ textarea {
     outline: 0;
     border: 0;
     resize: none;
+    font-size: 16px;
+    font-weight: 3 00;
+    font-family: "Kanit", sans-serif;
 }
+
 .arrow {
     width: 250px;
     height: auto;
@@ -232,4 +241,7 @@ textarea {
     top: 20%;
     left: 47%;
     padding: 1rem;
+}
+.note-head {
+    display: none;
 }

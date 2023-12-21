@@ -6,7 +6,7 @@ export default function displayNoteInputs(
     welcomeNote
 ) {
     firstPage.style.display = "none";
-    noteHead.style.display = "flex";
+    noteHead.style.display = "block";
     noteTitle.value = welcomeNote.title;
     noteArea.placeholder = welcomeNote.content;
 }
