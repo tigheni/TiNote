@@ -21,7 +21,6 @@ body {
     gap: 2rem;
     align-items: center;
     background-color: var(--myBlack);
-    color: aliceblue;
     font-size: 30px;
     border-right: 2px solid var(--myPurple);
 }
@@ -34,7 +33,7 @@ body {
 }
 .side-bar > i {
     color: white;
-    border: none;
+   
     box-shadow: 0px 8px 15px var(--myBlack);
     transition: all 0.2s ease 0s;
 }
@@ -94,13 +93,13 @@ body {
 }
 
 .container {
-    display: flex;
-
+/*     display: flex;
     flex-direction: column;
+    height: auto;
+    font-family: "Kanit", sans-serif; */
+
     padding-bottom: 1.2rem;
     border-bottom: 2px solid var(--myPurple);
-    font-family: "Kanit", sans-serif;
-    height: auto;
 }
 .left-section {
     border-right: #5e548e 3px solid;
@@ -193,37 +192,64 @@ body {
     font-family: "kanit", sans-serif;
 }
 
-.pin, .done, .bin {
+.pin {
+    background-image: url(./images/broche.png);
+    background-size: cover;
+    border: none;
+    outline: 0;
     width: 35px;
     height: 35px;
     cursor: pointer;
     transition: all 0.2s ease 0s;
-    padding-left:5px ;
+    background-color: transparent;
+}
+.bin {
+    background-image: url(./images/icons8-poubelle-50.png);
+    background-size: cover;
+    border: none;
+    outline: 0;
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+    transition: all 0.2s ease 0s;
+    background-color: transparent;
+}
+
+.submit-btn {
+    background-image: url(./images/icons8-vérifié-48.png);
+    background-size: cover;
+    border: none;
+    outline: 0;
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+    transition: all 0.2s ease 0s;
+    background-color: transparent;
 }
 .pin:hover {
     transform: rotate(-45deg);
 }
-.done:hover {
+.submit-btn:hover {
     transform: scale(1.2);
 }
 .bin:hover {
-animation: shake 0.35s ease-in-out ; 
+    animation: shake 0.35s ease-in-out;
 }
-@keyframes shake{
-    0%{
-        transform:rotate(0deg);
+@keyframes shake {
+    0% {
+        transform: rotate(0deg);
     }
-    25%{
-        transform:rotate(15deg);
+    25% {
+        transform: rotate(15deg);
     }
-    50%{
-        transform:rotate(-15deg);
+    50% {
+        transform: rotate(-15deg);
     }
-    75%{
-        transform:rotate(15deg);
+    75% {
+        transform: rotate(15deg);
     }
-    100%{
-        transform:rotate(0deg);
+    100% {
+        transform: rotate(0deg);
     }
 }
 
