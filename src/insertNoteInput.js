@@ -11,7 +11,9 @@ export default function insertNoteInput(Note, NoteList) {
             "This is a new note",
             new Date().toLocaleString()
         );
+
         const noteList = new NoteList();
+
         noteList.add(welcomeNote);
         // notesCard(note); make the notewel appear on the notes cards
         displayNoteInputs(
