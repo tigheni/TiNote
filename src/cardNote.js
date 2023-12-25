@@ -22,9 +22,7 @@ export default function cardNote(note) {
     // Create and append truncated content
     const noteContent = document.createElement("h5");
     const truncatedContent = note.content.slice(0, 35);
-    if (!note.content.length) {
-        return false;
-    }
+
     noteContent.innerHTML = truncatedContent + "...";
     noteContent.classList.add("note-resumé");
 

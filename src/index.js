@@ -3,11 +3,13 @@ import noItems from "./noItems.js";
 import insertNoteInput from "./insertNoteInput.js";
 import setupEventListeners from "./note.js";
 export class Note {
-    constructor(title, content, date) {
+    constructor(title, content, date, tag) {
         this.title = title;
         this.content = content;
         this.date = date;
         this.id = Math.random().toString(36).substr(2, 9);
+        this.tag = tag;
+        this.isPined = false;
     }
 }
 

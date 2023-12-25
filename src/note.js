@@ -10,8 +10,10 @@ export default function setupEventListeners() {
         const save = document.querySelector(".submit-btn");
         const noteTitle = document.querySelector(".note-title-input");
         const noteText = document.querySelector(".note-text");
+        const noteTags = document.querySelector(".note-tags-input");
 
-        save.addEventListener("click", function () {
+        save.addEventListener("click", function (e) {
+            if (!noteText.value) return e.preventDefault();
             const currentDate = new Date();
 
             const options = {
@@ -24,17 +26,21 @@ export default function setupEventListeners() {
             };
             let date = currentDate.toLocaleString("en-us", options);
 
-            const note = new Note(noteTitle.value, noteText.value, date);
+            const note = new Note(
+                noteTitle.value,
+                noteText.value,
+                date,
+                noteTags
+            );
             noteList.add(note);
 
             // Update cardNote function to handle the new NoteList structure
             cardNote(note, noteList);
 
             // Clear input fields after adding a note
-            noteTitle.value = "";
+
             noteText.value = "";
         });
-
         // Handle other event listeners...
     });
 }
