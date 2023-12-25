@@ -142,12 +142,14 @@ body {
     color: var(--myPurple);
     cursor: pointer;
     padding-top: 15px;
+    height: 100%;
 }
 .card {
     display: flex;
     justify-content: start;
     align-items: start;
     gap: 1rem;
+    
     font-size: 18px;
     cursor: pointer;
 }
