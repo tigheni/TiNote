@@ -1,5 +1,4 @@
 const notesCard = document.querySelector("#notes-card");
-
 export default function cardNote(note) {
     // Create card container
     const cardDiv = document.createElement("div");

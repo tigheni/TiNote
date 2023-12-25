@@ -1,8 +1,8 @@
 // note.js
-
+import noItems from "./noItems.js";
 import { Note, NoteList } from "./index.js";
 import cardNote from "./cardNote.js";
-
+import renderNotes from "./renderNotes.js";
 export default function setupEventListeners() {
     const noteList = new NoteList(); // Create NoteList instance
 
@@ -35,12 +35,12 @@ export default function setupEventListeners() {
             noteList.add(note);
 
             // Update cardNote function to handle the new NoteList structure
-            cardNote(note, noteList);
-
+            cardNote(note);
             // Clear input fields after adding a note
-
-            noteText.value = "";
+            (noteText.value = ""), (noteTags.value = "");
+            noItems();
         });
-        // Handle other event listeners...
+        renderNotes(noteList);
+        noItems();
     });
 }

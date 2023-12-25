@@ -1,5 +1,4 @@
 import "./style.css";
-import noItems from "./noItems.js";
 import insertNoteInput from "./insertNoteInput.js";
 import setupEventListeners from "./note.js";
 export class Note {
@@ -44,6 +43,5 @@ export class NoteList {
         return this.notes;
     }
 }
-noItems();
 setupEventListeners();
 insertNoteInput(Note, NoteList);
