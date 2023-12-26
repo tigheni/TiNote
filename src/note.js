@@ -37,7 +37,9 @@ export default function setupEventListeners() {
             // Update cardNote function to handle the new NoteList structure
             cardNote(note);
             // Clear input fields after adding a note
-            (noteText.value = ""), (noteTags.value = "");
+            (noteText.value = ""),
+                (noteTags.value = ""),
+                (noteTitle.value = "New Note");
             noItems();
         });
         renderNotes(noteList);

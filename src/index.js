@@ -1,6 +1,7 @@
 import "./style.css";
 import insertNoteInput from "./insertNoteInput.js";
 import setupEventListeners from "./note.js";
+import reviewNote from "./reviewNote.js";
 export class Note {
     constructor(title, content, date, tag) {
         this.title = title;
@@ -45,3 +46,4 @@ export class NoteList {
 }
 setupEventListeners();
 insertNoteInput(Note, NoteList);
+reviewNote();
