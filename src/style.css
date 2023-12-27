@@ -292,3 +292,9 @@ textarea {
 .note-head {
     display: none;
 }
+.first-page{
+    display: block;
+}
+.note-date{
+    font-size: 15px;
+}

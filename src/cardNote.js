@@ -10,6 +10,11 @@ export default function cardNote(note) {
     icon.classList.add("fa-solid", "fa-bars");
     cardDiv.appendChild(icon);
 
+    // Create tag
+    const tig = document.createElement("span");
+    tig.innerHTML = note.tag;
+    cardDiv.appendChild(tig);
+
     // Create content container
     const contentDiv = document.createElement("div");
 

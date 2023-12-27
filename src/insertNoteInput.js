@@ -1,18 +1,21 @@
-import displayNoteInputs from "./notehead.js";
+import displayNoteInputs from "./displayNoteInputs.js";
 
 const addBtn = document.querySelector(".btn-add-note");
 export default function insertNoteInput(Note, NoteList) {
     addBtn.addEventListener("click", () => {
         const welcomeNote = new Note(
             "New Note",
-            "This is a new note",
+            "Start typing here...",
             new Date().toLocaleString()
         );
 
         const noteList = new NoteList();
-
-        noteList.add(welcomeNote);
-        // notesCard(note); make the notewel appear on the notes cards
         displayNoteInputs(welcomeNote);
+
+        welcomeNote.content !== "Start typing here..." &&
+        welcomeNote.title !== "New Note"
+            ? noteList.add(welcomeNote)
+            : false;
+        // notesCard(note); make the notewel appear on the notes cards
     });
 }

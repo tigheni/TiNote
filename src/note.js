@@ -30,8 +30,9 @@ export default function setupEventListeners() {
                 noteTitle.value,
                 noteText.value,
                 date,
-                noteTags
+                noteTags.value
             );
+
             noteList.add(note);
 
             // Update cardNote function to handle the new NoteList structure
@@ -42,7 +43,7 @@ export default function setupEventListeners() {
                 (noteTitle.value = "New Note");
             noItems();
         });
-        renderNotes(noteList);
         noItems();
     });
+    renderNotes(noteList);
 }
