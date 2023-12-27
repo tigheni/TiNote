@@ -8,12 +8,17 @@ export default function cardNote(note) {
     // Create icon
     const icon = document.createElement("i");
     icon.classList.add("fa-solid", "fa-bars");
-    cardDiv.appendChild(icon);
 
     // Create tag
     const tig = document.createElement("span");
     tig.innerHTML = note.tag;
-    cardDiv.appendChild(tig);
+
+    tig.innerText.length > 0 ? tig.classList.add("show") : false;
+    const tagIconDiv = document.createElement("div");
+    tagIconDiv.classList.add("tag-icon");
+
+    tagIconDiv.append(icon, tig);
+    cardDiv.appendChild(tagIconDiv);
 
     // Create content container
     const contentDiv = document.createElement("div");

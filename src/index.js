@@ -1,7 +1,9 @@
 import "./style.css";
+
 import insertNoteInput from "./insertNoteInput.js";
 import setupEventListeners from "./note.js";
 import reviewNote from "./reviewNote.js";
+/* import bin from "./bin.js"; */
 export class Note {
     constructor(title, content, date, tag) {
         this.title = title;
@@ -44,6 +46,17 @@ export class NoteList {
         return this.notes;
     }
 }
+
+export const Elements = {
+    firstPage: document.querySelector(".first-page"),
+    noteHead: document.querySelector(".note-head"),
+    noteTitle: document.querySelector(".note-title-input"),
+    noteArea: document.querySelector(".note-text"),
+    notesCard: document.getElementById("notes-card"),
+    tag: document.querySelector(".note-tags-input"),
+};
+
+reviewNote();
 setupEventListeners();
 insertNoteInput(Note, NoteList);
-reviewNote();
+/* bin(); */

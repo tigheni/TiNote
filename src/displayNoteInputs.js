@@ -1,11 +1,7 @@
-const firstPage = document.querySelector(".first-page");
-const noteHead = document.querySelector(".note-head");
-const noteTitle = document.querySelector(".note-title-input");
-const noteArea = document.querySelector(".note-text");
-
+import { Elements } from "./index.js";
 export default function displayNoteInputs(welcomeNote) {
-    noteTitle.value = welcomeNote.title;
-    noteArea.placeholder = welcomeNote.content;
-    firstPage.style.display = "none";
-    noteHead.style.display = "block";
+    Elements.noteTitle.value = welcomeNote.title;
+    Elements.noteArea.placeholder = welcomeNote.content;
+    Elements.firstPage.style.display = "none";
+    Elements.noteHead.style.display = "block";
 }

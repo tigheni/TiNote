@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>To Do List</title>
+        <title>Note</title>
         <script
             src="https://kit.fontawesome.com/2399160396.js"
             crossorigin="anonymous"
@@ -15,7 +15,7 @@
         <section class="side-bar">
             <i class="fa-regular fa-note-sticky"></i>
             <i class="fa-regular fa-star"></i>
-            <i class="fa-regular fa-trash-can"></i>
+            <i class="fa-regular fa-trash-can binBtn"></i>
         </section>
         <!--  -->
         <!--  -->
@@ -61,7 +61,8 @@
                         <input
                             type="text"
                             class="note-tags-input"
-                            placeholder="Link tags,files,notes..."
+                            placeholder="tags"
+                            maxlength="15"
                         />
                     </div>
                     <div>
@@ -74,7 +75,11 @@
                     </div>
                 </div>
                 <div class="note-area">
-                    <textarea name="note-area" class="note-text"></textarea>
+                    <textarea
+                        name="note-area"
+                        id="note-text"
+                        class="note-text"
+                    ></textarea>
                 </div>
             </div>
         </section>

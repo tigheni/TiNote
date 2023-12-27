@@ -43,7 +43,7 @@ export default function setupEventListeners() {
                 (noteTitle.value = "New Note");
             noItems();
         });
+        renderNotes(noteList);
         noItems();
     });
-    renderNotes(noteList);
 }
