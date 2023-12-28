@@ -54,6 +54,11 @@ export const Elements = {
     noteArea: document.querySelector(".note-text"),
     notesCard: document.getElementById("notes-card"),
     tag: document.querySelector(".note-tags-input"),
+    submitBtn: document.querySelector(".submit-btn"),
+    noteheading: document.querySelector(".note-heading"),
+    noteresumé: document.querySelector(".note-resumé"),
+    noteTagsInput: document.querySelector(".note-tags-input"),
+    noteTextInput: document.querySelector(".note-text"),
 };
 
 reviewNote();
