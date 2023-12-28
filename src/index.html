@@ -14,12 +14,11 @@
     <body>
         <section class="side-bar">
             <i class="fa-regular fa-note-sticky"></i>
-            <i class="fa-regular fa-star"></i>
-            <i class="fa-regular fa-trash-can binBtn"></i>
+            <!-- TODO: next features -->
+            <!-- <i class="fa-regular fa-star"></i>
+            <i class="fa-regular fa-trash-can binBtn"></i>  -->
         </section>
-        <!--  -->
-        <!--  -->
-        <!--  -->
+
         <section class="left-section">
             <div class="container">
                 <div class="row">
@@ -55,32 +54,35 @@
                 </p>
             </div>
             <div class="note-head">
-                <div class="uppernote">
-                    <div>
-                        <input type="text" class="note-title-input" value="" />
-                        <input
-                            type="text"
-                            class="note-tags-input"
-                            placeholder="tags"
-                            maxlength="15"
-                        />
+                <form action="index.js" method="post">
+                    <div class="uppernote">
+                        <div>
+                            <input
+                                type="text"
+                                class="note-title-input"
+                                value=""
+                            />
+                            <input
+                                type="text"
+                                class="note-tags-input"
+                                placeholder="tags"
+                                maxlength="15"
+                            />
+                        </div>
+                        <div>
+                            <input type="button" id="delete" value="" />
+                            <input type="button" class="pin" value="" />
+                            <input type="button" class="submit-btn" />
+                        </div>
                     </div>
-                    <div>
-                        <input type="button" class="bin" value="" />
-                        <input type="button" class="pin" value="" />
-                        <!-- <img src="./images/broche.png" alt="pin" class="pin" /> -->
-                        <input type="button" class="submit-btn" />
-
-                        <!--         <img src="./images/icons8-vérifié-48.png" /> -->
+                    <div class="note-area">
+                        <textarea
+                            name="note-area"
+                            id="note-text"
+                            class="note-text"
+                        ></textarea>
                     </div>
-                </div>
-                <div class="note-area">
-                    <textarea
-                        name="note-area"
-                        id="note-text"
-                        class="note-text"
-                    ></textarea>
-                </div>
+                </form>
             </div>
         </section>
     </body>

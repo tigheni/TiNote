@@ -17,7 +17,11 @@ export default function cardNote(note) {
     const tagIconDiv = document.createElement("div");
     tagIconDiv.classList.add("tag-icon");
 
-    tagIconDiv.append(icon, tig);
+    const deleteButton = document.createElement("button");
+    deleteButton.classList.add("delete-btn");
+    deleteButton.innerHTML = `<i class="fa-solid fa-trash"></i>`;
+
+    tagIconDiv.append(icon, tig, deleteButton);
     cardDiv.appendChild(tagIconDiv);
 
     // Create content container
@@ -48,9 +52,4 @@ export default function cardNote(note) {
 
     // Append cardDiv to notesCard
     notesCard.appendChild(cardDiv);
-
-    // Create and append horizontal line
-    const hrElement = document.createElement("span");
-    hrElement.classList.add("hrByMe");
-    notesCard.appendChild(hrElement);
 }

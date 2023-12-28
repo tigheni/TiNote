@@ -1,9 +1,10 @@
 import "./style.css";
-
+// import bin from "./delete.js";
 import insertNoteInput from "./insertNoteInput.js";
 import setupEventListeners from "./note.js";
 import reviewNote from "./reviewNote.js";
 /* import bin from "./bin.js"; */
+
 export class Note {
     constructor(title, content, date, tag) {
         this.title = title;
@@ -59,9 +60,18 @@ export const Elements = {
     noteresumé: document.querySelector(".note-resumé"),
     noteTagsInput: document.querySelector(".note-tags-input"),
     noteTextInput: document.querySelector(".note-text"),
+    deleteBtn: document.querySelector("#delete-btn"),
+    deleteBtn2: document.querySelector(".delete-btn"),
 };
 
-reviewNote();
 setupEventListeners();
+reviewNote(Elements);
 insertNoteInput(Note, NoteList);
-/* bin(); */
+// bin();
+/* if (document.readyState !== "loading") {
+    console.log("document is already ready, just execute code here");
+} else {
+    document.addEventListener("DOMContentLoaded", function () {
+        console.log("document was not ready, place code here");
+    });
+} */

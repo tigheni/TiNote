@@ -5,8 +5,8 @@
     --myPurple: #5e548e;
     --myBlack: #333333;
     --lightPurple: #8972b6;
-    --mygreen:#496f5d;
-    --mylightgreen:#62a87c;
+    --mygreen: #496f5d;
+    --mylightgreen: #62a87c;
 }
 
 body {
@@ -98,7 +98,6 @@ body {
 }
 
 .container {
-
     padding-bottom: 1.2rem;
     border-bottom: 2px solid var(--myPurple);
 }
@@ -147,10 +146,12 @@ body {
 .card {
     display: flex;
     justify-content: start;
-    align-items: start;
+    align-items: center;
     gap: 1rem;
     font-size: 18px;
     cursor: pointer;
+    padding-bottom: 15px;
+    border-bottom: 3px solid var(--myPurple);    ;
 }
 .hrByMe {
     border: 1px solid var(--myPurple);
@@ -181,7 +182,7 @@ body {
     padding: 1rem;
     font-family: "Kanit", sans-serif;
     cursor: pointer;
-    border-bottom: 1px solid var(--myPurple);
+    border-bottom: 2px solid var(--myPurple);
 }
 .note-tags-input {
     font-size: 14px;
@@ -193,9 +194,8 @@ body {
     font-family: "kanit", sans-serif;
 }
 
-
 .submit-btn,
-.bin,
+#delete,
 .pin {
     background-size: cover;
     border: none;
@@ -211,7 +211,7 @@ body {
     background-image: url(./images/icons8-vérifié-48.png);
 }
 
-.bin {
+#delete {
     background-image: url(./images/icons8-poubelle-50.png);
 }
 
@@ -228,7 +228,7 @@ body {
     transform: scale(1.2);
 }
 
-.bin:hover {
+#delete:hover {
     animation: shake 0.35s ease-in-out;
 }
 @keyframes shake {
@@ -292,18 +292,18 @@ textarea {
 .note-date {
     font-size: 15px;
 }
-.show{
+.show {
     display: block;
     color: var(--myBlack);
     font-size: 13px;
-    border-radius:2px; 
+    border-radius: 2px;
     padding: 1px;
-    background-color: var(--mylightgreen); 
+    background-color: var(--mylightgreen);
     width: 50px;
     text-align: center;
     overflow: hidden;
 }
-.tag-icon{
+.tag-icon {
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -311,3 +311,25 @@ textarea {
     align-items: center;
     padding-top: 15px;
 }
+.delete-btn {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: rgb(20, 20, 20);
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s;
+    transition-timing-function: cubic-bezier(0.62, 0.08, 0.83, 0.67);
+    display: flex;
+    justify-content: center;
+    color: white;
+    align-items: center;
+    padding: 15px;
+}
+
+.delete-btn:hover {
+    background-color: rgb(255, 69, 69);
+}
+
+
+
