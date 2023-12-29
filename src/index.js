@@ -1,5 +1,5 @@
 import "./style.css";
-// import bin from "./delete.js";
+import deleteCardEventListener from "./delete.js";
 import insertNoteInput from "./insertNoteInput.js";
 import setupEventListeners from "./note.js";
 import reviewNote from "./reviewNote.js";
@@ -10,7 +10,8 @@ export class Note {
         this.title = title;
         this.content = content;
         this.date = date;
-        this.id = Math.random().toString(36).substr(2, 9);
+        this.id =
+            Date.now().toString() + Math.random().toString(36).substr(2, 9);
         this.tag = tag;
         this.isPined = false;
     }
@@ -64,14 +65,7 @@ export const Elements = {
     deleteBtn2: document.querySelector(".delete-btn"),
 };
 
-setupEventListeners();
-reviewNote(Elements);
 insertNoteInput(Note, NoteList);
-// bin();
-/* if (document.readyState !== "loading") {
-    console.log("document is already ready, just execute code here");
-} else {
-    document.addEventListener("DOMContentLoaded", function () {
-        console.log("document was not ready, place code here");
-    });
-} */
+deleteCardEventListener();
+setupEventListeners();
+reviewNote();

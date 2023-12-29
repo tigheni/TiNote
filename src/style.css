@@ -151,7 +151,7 @@ body {
     font-size: 18px;
     cursor: pointer;
     padding-bottom: 15px;
-    border-bottom: 3px solid var(--myPurple);    ;
+    border-bottom: 3px solid var(--myPurple);   
 }
 .hrByMe {
     border: 1px solid var(--myPurple);
