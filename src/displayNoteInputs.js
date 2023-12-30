@@ -1,15 +1,23 @@
 import { Elements } from "./index.js";
 export default function displayNoteInputs(welcomeNote) {
-    Elements.noteTitle.value = welcomeNote.title;
-    Elements.noteArea.placeholder = welcomeNote.content;
-    if ((Elements.firstPage.style.display = "block")) {
+    if (Elements.firstPage && welcomeNote) {
         Elements.noteHead.style.display = "block";
         Elements.firstPage.style.display = "none";
-    } else if ((Elements.firstPage.style.display = "none")) {
-        Elements.noteHead.style.display = "none";
+
+        Elements.noteTitle.value = welcomeNote.title;
+        Elements.noteArea.value = "";
+        (Elements.tag.value = ""),
+            (Elements.noteArea.placeholder = welcomeNote.content);
+    } else {
         Elements.firstPage.style.display = "block";
+        Elements.noteHead.style.display = "none";
+        Elements.noteTitle.value = "New Note";
+        Elements.noteArea.value = "";
+        (Elements.tag.value = ""),
+            (Elements.noteArea.placeholder = "Start typing here...");
     }
-    (Elements.noteArea.value = ""),
-        (Elements.noteTagsInput.value = ""),
-        (Elements.noteTitle.value = "New Note");
+
+    setTimeout(function () {
+        document.getElementById("note-text").focus();
+    }, 0);
 }
