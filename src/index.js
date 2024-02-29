@@ -4,7 +4,6 @@ import insertNoteInput from "./insertNoteInput.js";
 import saveNote from "./note.js";
 import renderNotes from "./renderNotes.js";
 import reviewNote from "./reviewNote.js";
-/* import bin from "./bin.js"; */
 
 export class Note {
     constructor(title, content, date, tag) {
@@ -73,7 +72,7 @@ export const Elements = {
 };
 
 insertNoteInput(Note);
-renderNotes(noteList);
 saveNote(noteList);
-deleteCardEventListener(noteList);
+renderNotes(noteList);
 reviewNote();
+deleteCardEventListener(noteList);

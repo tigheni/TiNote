@@ -3,7 +3,6 @@ import displayNoteInputs from "./displayNoteInputs.js";
 import renderNotes from "./renderNotes.js";
 export default function deleteCardEventListener(noteList) {
     const notesCard = document.querySelector("#notes-card");
-
     notesCard.addEventListener("click", function (e) {
         const deleteBtn = e.target.closest(".delete-btn");
         if (deleteBtn) {
@@ -21,14 +20,11 @@ export default function deleteCardEventListener(noteList) {
             if (index !== -1) {
                 noteList.remove(me, function () {
                     card.remove();
-
                     renderNotes(noteList);
                     noItems();
                 });
             }
 
-            /*  window.location.reload(); */
-            noItems();
             displayNoteInputs();
         }
         noItems();

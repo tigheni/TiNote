@@ -19,7 +19,6 @@ export default function saveNote(noteList) {
                 minute: "numeric",
             };
             let date = currentDate.toLocaleString("en-us", options);
-
             const note = {
                 title: Elements.noteTitle.value,
                 content: Elements.noteArea.value,
@@ -29,7 +28,6 @@ export default function saveNote(noteList) {
 
             noteList.add(note, function () {
                 renderNotes(noteList);
-                noItems();
             });
 
             // Clear input fields after adding a note

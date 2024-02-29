@@ -1,5 +1,5 @@
 import displayNoteInputs from "./displayNoteInputs.js";
-
+import { Elements } from "./index.js";
 const addBtn = document.querySelector(".btn-add-note");
 export default function insertNoteInput(Note) {
     addBtn.addEventListener("click", (e) => {
@@ -9,17 +9,7 @@ export default function insertNoteInput(Note) {
             "Start typing here...",
             new Date().toLocaleString()
         );
+        Elements.submitBtn.style.display = "inline-block";
         displayNoteInputs(welcomeNote);
-
-        if (
-            welcomeNote.content !== "Start typing here..." &&
-            welcomeNote.title !== "New Note"
-        ) {
-            noteList.add(welcomeNote, function () {
-                // Update UI or render notes after adding a new note
-                renderNotes(noteList);
-                noItems();
-            });
-        }
     });
 }
