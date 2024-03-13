@@ -48,11 +48,13 @@ export class NoteList {
             }
         }
     }
+
     edit(note, title, content) {
         note.title = title;
         note.content = content;
         this.saveToLocalStorage();
     }
+
     getAllNotes() {
         return this.notes;
     }

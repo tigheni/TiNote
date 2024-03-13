@@ -1,5 +1,6 @@
 import displayNoteInputs from "./displayNoteInputs.js";
 import { Elements } from "./index.js";
+
 const addBtn = document.querySelector(".btn-add-note");
 export default function insertNoteInput(Note) {
     addBtn.addEventListener("click", (e) => {

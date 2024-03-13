@@ -2,11 +2,12 @@
 import noItems from "./noItems.js";
 import renderNotes from "./renderNotes.js";
 import { Elements } from "./index.js";
+
 export default function saveNote(noteList) {
-    document.addEventListener("DOMContentLoaded", function () {
+    document.addEventListener("DOMContentLoaded", () => {
         const save = document.querySelector(".submit-btn");
 
-        save.addEventListener("click", function (e) {
+        save.addEventListener("click", (e) => {
             if (!Elements.noteArea.value) return e.preventDefault();
             const currentDate = new Date();
 
@@ -18,23 +19,24 @@ export default function saveNote(noteList) {
                 hour: "numeric",
                 minute: "numeric",
             };
-            let date = currentDate.toLocaleString("en-us", options);
+            const date = currentDate.toLocaleString("en-us", options);
             const note = {
                 title: Elements.noteTitle.value,
                 content: Elements.noteArea.value,
-                date: date,
+                date,
                 tag: Elements.tag.value,
             };
 
-            noteList.add(note, function () {
+            noteList.add(note, () => {
                 renderNotes(noteList);
             });
 
             // Clear input fields after adding a note
-            (Elements.noteArea.value = ""),
-                (Elements.tag.value = ""),
-                (Elements.noteTitle.value = "New Note");
+            Elements.noteArea.value = "";
+            Elements.tag.value = "";
+            Elements.noteTitle.value = "New Note";
             noItems();
+            return undefined;
         });
         noItems();
     });

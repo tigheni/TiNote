@@ -13,7 +13,10 @@ export default function cardNote(note) {
     const tig = document.createElement("span");
     tig.innerHTML = note.tag;
 
-    tig.innerText.length > 0 ? tig.classList.add("show") : false;
+    if (tig.innerText.length > 0) {
+        tig.classList.add("show");
+    }
+
     const tagIconDiv = document.createElement("div");
     tagIconDiv.classList.add("tag-icon");
 
@@ -36,7 +39,7 @@ export default function cardNote(note) {
     const noteContent = document.createElement("h5");
     const truncatedContent = note.content.slice(0, 35);
 
-    noteContent.innerHTML = truncatedContent + "...";
+    noteContent.innerHTML = `${truncatedContent}...`;
     noteContent.classList.add("note-resumé");
 
     // Create and append date

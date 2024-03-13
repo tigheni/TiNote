@@ -1,4 +1,5 @@
 import { Elements } from "./index.js";
+
 export default function displayNoteInputs(welcomeNote) {
     if (Elements.firstPage && welcomeNote) {
         Elements.noteHead.style.display = "block";
@@ -15,7 +16,7 @@ export default function displayNoteInputs(welcomeNote) {
         Elements.tag.value = "";
         Elements.noteArea.placeholder = "Start typing here...";
     }
-    setTimeout(function () {
+    setTimeout(() => {
         document.getElementById("note-text").focus();
     }, 0);
 }

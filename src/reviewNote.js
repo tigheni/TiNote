@@ -1,11 +1,12 @@
 import { Elements } from "./index.js";
 import noItems from "./noItems.js";
+
 export default function reviewNote() {
-    window.addEventListener("DOMContentLoaded", function () {
+    window.addEventListener("DOMContentLoaded", () => {
         const notesCard = document.querySelector("#notes-card");
 
         // Use event delegation on the parent element (notesCard)
-        notesCard.addEventListener("click", function (e) {
+        notesCard.addEventListener("click", (e) => {
             const card = e.target.closest(".card");
             e.preventDefault();
             const notes = JSON.parse(localStorage.getItem("notes"));
@@ -17,7 +18,7 @@ export default function reviewNote() {
                 Elements.noteArea.value = me.content;
                 Elements.noteTitle.value = me.title;
                 Elements.tag.value = me.tag;
-            } else false;
+            }
             noItems();
         });
     });
