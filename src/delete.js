@@ -1,6 +1,6 @@
 import noItems from "./noItems.js";
 import displayNoteInputs from "./displayNoteInputs.js";
-import renderNotes from "./renderNotes.js";
+import renderNotes from "./renderNotesCard.js";
 
 export default function deleteCardEventListener(noteList) {
     const notesCard = document.querySelector("#notes-card");

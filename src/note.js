@@ -1,6 +1,6 @@
 // note.js
 import noItems from "./noItems.js";
-import renderNotes from "./renderNotes.js";
+import renderNotes from "./renderNotesCard.js";
 import { Elements } from "./index.js";
 
 export default function saveNote(noteList) {

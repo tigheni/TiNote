@@ -2,8 +2,8 @@ import "./style.css";
 import deleteCardEventListener from "./delete.js";
 import insertNoteInput from "./insertNoteInput.js";
 import saveNote from "./note.js";
-import renderNotes from "./renderNotes.js";
-import reviewNote from "./reviewNote.js";
+import renderNotesCard from "./renderNotesCard.js";
+import reviewNoteCard from "./reviewNoteCard.js";
 
 export class Note {
     constructor(title, content, date, tag) {
@@ -75,6 +75,6 @@ export const Elements = {
 
 insertNoteInput(Note);
 saveNote(noteList);
-renderNotes(noteList);
-reviewNote();
+renderNotesCard(noteList);
+reviewNoteCard();
 deleteCardEventListener(noteList);
