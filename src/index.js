@@ -4,6 +4,7 @@ import insertNoteInput from "./insertNoteInput.js";
 import saveNote from "./note.js";
 import renderNotesCard from "./renderNotesCard.js";
 import reviewNoteCard from "./reviewNoteCard.js";
+import PinNote from "./pinNote.js";
 
 export class Note {
     constructor(title, content, date, tag) {
@@ -71,6 +72,7 @@ export const Elements = {
     submitBtn: document.querySelector(".submit-btn"),
     noteheading: document.querySelector(".note-heading"),
     noteresumé: document.querySelector(".note-resumé"),
+    pinToggle: document.querySelector(".pin"),
 };
 
 insertNoteInput(Note);
@@ -78,3 +80,4 @@ saveNote(noteList);
 renderNotesCard(noteList);
 reviewNoteCard();
 deleteCardEventListener(noteList);
+PinNote();
