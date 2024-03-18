@@ -1,43 +1,49 @@
-// note.js
 import noItems from "./noItems.js";
 import renderNotes from "./renderNotesCard.js";
 import { Elements } from "./index.js";
 
-export default function saveNote(noteList) {
-    document.addEventListener("DOMContentLoaded", () => {
-        const save = document.querySelector(".submit-btn");
+function initializeNoteInput() {
+    Elements.noteArea.value = "";
+    Elements.tag.value = "";
+    Elements.noteTitle.value = "New Note";
+    noItems();
+}
 
-        save.addEventListener("click", (e) => {
-            if (!Elements.noteArea.value) return e.preventDefault();
-            const currentDate = new Date();
+function handleSaveClick(noteList, e) {
+    if (!Elements.noteArea.value) return e.preventDefault();
 
-            const options = {
-                weekday: "long",
-                year: "numeric",
-                month: "short",
-                day: "numeric",
-                hour: "numeric",
-                minute: "numeric",
-            };
-            const date = currentDate.toLocaleString("en-us", options);
-            const note = {
-                title: Elements.noteTitle.value,
-                content: Elements.noteArea.value,
-                date,
-                tag: Elements.tag.value,
-            };
+    const currentDate = new Date();
+    const options = {
+        weekday: "long",
+        year: "numeric",
+        month: "short",
+        day: "numeric",
+        hour: "numeric",
+        minute: "numeric",
+    };
+    const date = currentDate.toLocaleString("en-us", options);
 
-            noteList.add(note, () => {
-                renderNotes(noteList);
-            });
+    const note = {
+        title: Elements.noteTitle.value,
+        content: Elements.noteArea.value,
+        date,
+        tag: Elements.tag.value,
+    };
 
-            // Clear input fields after adding a note
-            Elements.noteArea.value = "";
-            Elements.tag.value = "";
-            Elements.noteTitle.value = "New Note";
-            noItems();
-            return undefined;
-        });
-        noItems();
+    noteList.add(note, () => {
+        renderNotes(noteList);
     });
+
+    initializeNoteInput();
+}
+
+export default function saveNote(noteList) {
+    const save = document.querySelector(".submit-btn");
+
+    const initializer = () => {
+        save.addEventListener("click", handleSaveClick.bind(null, noteList));
+        noItems();
+    };
+
+    document.addEventListener("DOMContentLoaded", initializer);
 }

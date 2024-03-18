@@ -10,11 +10,11 @@ export default function cardNote(note) {
     icon.classList.add("fa-solid", "fa-bars");
 
     // Create tag
-    const tig = document.createElement("span");
-    tig.innerHTML = note.tag;
+    const tag = document.createElement("span");
+    tag.innerHTML = note.tag;
 
-    if (tig.innerText.length > 0) {
-        tig.classList.add("show");
+    if (tag.innerText.length > 0) {
+        tag.classList.add("show");
     }
 
     const tagIconDiv = document.createElement("div");
@@ -24,7 +24,7 @@ export default function cardNote(note) {
     deleteButton.classList.add("delete-btn");
     deleteButton.innerHTML = `<i class="fa-solid fa-trash"></i>`;
 
-    tagIconDiv.append(icon, tig, deleteButton);
+    tagIconDiv.append(icon, tag, deleteButton);
     cardDiv.appendChild(tagIconDiv);
 
     // Create content container

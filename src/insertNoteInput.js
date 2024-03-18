@@ -3,7 +3,7 @@ import { Elements } from "./index.js";
 
 const addBtn = document.querySelector(".btn-add-note");
 export default function insertNoteInput(Note) {
-    addBtn.addEventListener("click", (e) => {
+    const clickToAddNote = (e) => {
         e.preventDefault();
         const welcomeNote = new Note(
             "New Note",
@@ -12,5 +12,6 @@ export default function insertNoteInput(Note) {
         );
         Elements.submitBtn.style.display = "inline-block";
         displayNoteInputs(welcomeNote);
-    });
+    };
+    addBtn.addEventListener("click", clickToAddNote);
 }
