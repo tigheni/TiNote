@@ -1,11 +1,11 @@
-import noItems from "./noItems.js";
-import renderNotes from "./renderNotesCard.js";
-import { Elements } from "./index.js";
+import noItems from './noItems.js';
+import renderNotes from './renderNotesCard.js';
+import { Elements } from './index.js';
 
 function initializeNoteInput() {
-    Elements.noteArea.value = "";
-    Elements.tag.value = "";
-    Elements.noteTitle.value = "New Note";
+    Elements.noteArea.value = '';
+    Elements.tag.value = '';
+    Elements.noteTitle.value = 'New Note';
     noItems();
 }
 
@@ -14,14 +14,14 @@ function handleSaveClick(noteList, e) {
 
     const currentDate = new Date();
     const options = {
-        weekday: "long",
-        year: "numeric",
-        month: "short",
-        day: "numeric",
-        hour: "numeric",
-        minute: "numeric",
+        weekday: 'long',
+        year: 'numeric',
+        month: 'short',
+        day: 'numeric',
+        hour: 'numeric',
+        minute: 'numeric',
     };
-    const date = currentDate.toLocaleString("en-us", options);
+    const date = currentDate.toLocaleString('en-us', options);
 
     const note = {
         title: Elements.noteTitle.value,
@@ -38,12 +38,12 @@ function handleSaveClick(noteList, e) {
 }
 
 export default function saveNote(noteList) {
-    const save = document.querySelector(".submit-btn");
+    const save = document.querySelector('.submit-btn');
 
     const initializer = () => {
-        save.addEventListener("click", handleSaveClick.bind(null, noteList));
+        save.addEventListener('click', handleSaveClick.bind(null, noteList));
         noItems();
     };
 
-    document.addEventListener("DOMContentLoaded", initializer);
+    document.addEventListener('DOMContentLoaded', initializer);
 }

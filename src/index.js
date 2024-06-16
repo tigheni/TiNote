@@ -1,10 +1,10 @@
-import "./style.css";
-import deleteCardEventListener from "./delete.js";
-import insertNoteInput from "./insertNoteInput.js";
-import saveNote from "./note.js";
-import renderNotesCard from "./renderNotesCard.js";
-import reviewNoteCard from "./reviewNoteCard.js";
-import PinNote from "./pinNote.js";
+import './style.css';
+import deleteCardEventListener from './delete.js';
+import insertNoteInput from './insertNoteInput.js';
+import saveNote from './note.js';
+import renderNotesCard from './renderNotesCard.js';
+import reviewNoteCard from './reviewNoteCard.js';
+import PinNote from './pinNote.js';
 
 export class Note {
     constructor(title, content, date, tag) {
@@ -14,17 +14,17 @@ export class Note {
         this.id =
             Date.now().toString() + Math.random().toString(36).substr(2, 9);
         this.tag = tag;
-        this.isPined = false;
+        this.isPinned = false;
     }
 }
 
 export class NoteList {
     constructor() {
-        this.notes = JSON.parse(localStorage.getItem("notes")) || [];
+        this.notes = JSON.parse(localStorage.getItem('notes')) || [];
     }
 
     saveToLocalStorage(callback) {
-        localStorage.setItem("notes", JSON.stringify(this.notes));
+        localStorage.setItem('notes', JSON.stringify(this.notes));
         if (callback) {
             callback();
         }
@@ -63,21 +63,20 @@ export class NoteList {
 const noteList = new NoteList();
 
 export const Elements = {
-    firstPage: document.querySelector(".first-page"),
-    noteHead: document.querySelector(".note-head"),
-    noteTitle: document.querySelector(".note-title-input"),
-    noteArea: document.querySelector(".note-text"),
-    notesCard: document.querySelector("#notes-card"),
-    tag: document.querySelector(".note-tags-input"),
-    submitBtn: document.querySelector(".submit-btn"),
-    noteheading: document.querySelector(".note-heading"),
-    noteresumé: document.querySelector(".note-resumé"),
-    pinToggle: document.querySelector(".pin"),
+    firstPage: document.querySelector('.first-page'),
+    noteHead: document.querySelector('.note-head'),
+    noteTitle: document.querySelector('.note-title-input'),
+    noteArea: document.querySelector('.note-text'),
+    notesCard: document.querySelector('#notes-card'),
+    tag: document.querySelector('.note-tags-input'),
+    submitBtn: document.querySelector('.submit-btn'),
+    noteheading: document.querySelector('.note-heading'),
+    noteresumé: document.querySelector('.note-resumé'),
+    pinToggle: document.querySelector('.pin'),
 };
-
+PinNote(noteList);
 insertNoteInput(Note);
 saveNote(noteList);
-renderNotesCard(noteList);
 reviewNoteCard();
 deleteCardEventListener(noteList);
-PinNote();
+renderNotesCard(noteList);
