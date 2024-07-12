@@ -8,7 +8,6 @@ export default function cardNote(note) {
     // Create icon
     const icon = document.createElement('i');
     icon.classList.add('fa-solid', 'fa-bars');
-
     // Create tag
     const tag = document.createElement('span');
     tag.innerHTML = note.tag;

@@ -1,9 +1,10 @@
 import { Elements } from './index.js';
 import renderNotes from './renderNotesCard.js';
+
 const togglePinStatus = (noteList) => {
     const cards = document.querySelectorAll('.card');
-    const cardArr = Array.from(cards);
-    const activeCard = cardArr.filter((card) =>
+    const cardsArr = Array.from(cards);
+    const activeCard = cardsArr.filter((card) =>
         card.classList.contains('active'),
     );
     if (activeCard.length === 0) {
