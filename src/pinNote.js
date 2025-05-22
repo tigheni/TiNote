@@ -2,22 +2,16 @@ import { Elements } from './index.js';
 import renderNotes from './renderNotesCard.js';
 
 const togglePinStatus = (noteList) => {
-    const cards = document.querySelectorAll('.card');
-    const cardsArr = Array.from(cards);
-    const activeCard = cardsArr.filter((card) =>
-        card.classList.contains('active'),
+    const cardsArr = Array.from(document.querySelectorAll('.card'));
+    const activeCard = cardsArr.find((card) =>
+        card.classList.contains('active')
     );
-    if (activeCard.length === 0) {
+    if (!activeCard) {
         return;
     }
-    const card = activeCard[0];
+    activeCard.classList.remove('active');
+    const card = activeCard;
 
-    const pinned = card.classList.contains('pinned');
-    if (pinned) {
-        card.classList.remove('pinned');
-    } else {
-        card.classList.add('pinned');
-    }
     const noteId = card.getAttribute('id');
     const note = noteList.notes.find((n) => n.id === noteId);
     note.isPinned = !note.isPinned;

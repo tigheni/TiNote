@@ -8,7 +8,7 @@ export default function insertNoteInput(Note) {
         const welcomeNote = new Note(
             'New Note',
             'Start typing here...',
-            new Date().toLocaleString(),
+            new Date().toLocaleString()
         );
         Elements.submitBtn.style.display = 'inline-block';
         displayNoteInputs(welcomeNote);
