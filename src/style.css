@@ -208,15 +208,15 @@ body {
 }
 
 .submit-btn {
-    background-image: url(./images/icons8-vérifié-48.png);
+    background-image: url(./assets/icons8-vérifié-48.png);
 }
 
 #delete {
-    background-image: url(./images/icons8-poubelle-50.png);
+    background-image: url(./assets/icons8-poubelle-50.png);
 }
 
 .pin {
-    background-image: url(./images/broche.png);
+    background-image: url(./assets/broche.png);
 }
 
 /* Button Hover Styles */

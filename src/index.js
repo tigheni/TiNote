@@ -5,7 +5,7 @@ import saveNote from './note.js';
 import renderNotesCard from './renderNotesCard.js';
 import reviewNoteCard from './reviewNoteCard.js';
 import PinNote from './pinNote.js';
-
+import searchBar from './search.js';
 export class Note {
     constructor(title, content, date, tag) {
         this.title = title;
@@ -60,7 +60,7 @@ export class NoteList {
         return this.notes;
     }
 }
-const noteList = new NoteList();
+export const noteList = new NoteList();
 
 export const Elements = {
     firstPage: document.querySelector('.first-page'),
@@ -80,3 +80,4 @@ saveNote(noteList);
 reviewNoteCard();
 deleteCardEventListener(noteList);
 renderNotesCard(noteList);
+searchBar();

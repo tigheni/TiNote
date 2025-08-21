@@ -2,27 +2,30 @@ import noItems from './noItems.js';
 import displayNoteInputs from './displayNoteInputs.js';
 import renderNotes from './renderNotesCard.js';
 
+export async function deleteNote(noteList, noteId) {
+    const noteToDelete = noteList
+        .getAllNotes()
+        .find((note) => String(note.id) === String(noteId));
+    if (noteToDelete) {
+        await noteList.remove(noteToDelete);
+        renderNotes(noteList);
+        noItems();
+        displayNoteInputs();
+    }
+}
+
 export default function deleteCardEventListener(noteList) {
     const notesCard = document.querySelector('#notes-card');
-    notesCard.addEventListener('click', (e) => {
+    if (!notesCard) return;
+
+    notesCard.addEventListener('click', async (e) => {
         const deleteBtn = e.target.closest('.delete-btn');
         if (deleteBtn) {
             e.preventDefault();
             const card = deleteBtn.closest('.card');
-            if (card) {
-                const notes = JSON.parse(localStorage.getItem('notes'));
-                const checkingCard = notes.find((note) => note.id === card.id);
-
-                if (checkingCard) {
-                    noteList.remove(checkingCard, () => {
-                        renderNotes(noteList);
-                        noItems();
-                    });
-                    displayNoteInputs();
-                }
+            if (card && card.id) {
+                await deleteNote(noteList, card.id);
             }
-            noItems();
         }
-        noItems();
     });
 }

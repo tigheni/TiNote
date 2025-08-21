@@ -1,63 +1,89 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Note</title>
-    <script src="https://kit.fontawesome.com/2399160396.js" crossorigin="anonymous"></script>
-    <link rel="icon" type="image/x-icon" href="./images/t.png" />
-  </head>
-  <body>
-    <section class="side-bar">
-      <i class="fa-regular fa-note-sticky"></i>
-      <!-- TODO: next features -->
-      <!-- <i class="fa-regular fa-star"></i>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Note</title>
+        <script
+            src="https://kit.fontawesome.com/2399160396.js"
+            crossorigin="anonymous"
+        ></script>
+        <link rel="icon" type="image/x-icon" href="./assets/t.png" />
+    </head>
+    <body>
+        <section class="side-bar">
+            <i class="fa-regular fa-note-sticky"></i>
+            <!-- TODO: next features -->
+            <!-- <i class="fa-regular fa-star"></i>
             <i class="fa-regular fa-trash-can binBtn"></i>  -->
-    </section>
+        </section>
 
-    <section class="left-section">
-      <div class="container">
-        <div class="row">
-          <div class="col-12">
-            <i class="fa-regular fa-note-sticky" style="font-size: 25px; color: lightslategray"></i>
-            <h3 class="whereiam">Notes</h3>
-          </div>
-          <i class="fa-solid fa-circle-plus btn-add-note"></i>
-        </div>
-        <div class="search-bar">
-          <input type="search" class="search-input" placeholder="search" />
-        </div>
-      </div>
-      <div id="notes-card" class="no-items"></div>
-    </section>
-
-    <section class="right-section">
-      <div class="first-page">
-        <img src="./images/pngegg (1).png" class="arrow" alt="" />
-
-        <p class="quote">
-          <i> Either write something worth reading or do something worth writing. </i>
-        </p>
-      </div>
-      <div class="note-head">
-        <form action="index.js" method="post">
-          <div class="uppernote">
-            <div>
-              <input type="text" class="note-title-input" value="" />
-
-              <input type="text" class="note-tags-input" placeholder="tags" maxlength="15" />
+        <section class="left-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <i
+                            class="fa-regular fa-note-sticky"
+                            style="font-size: 25px; color: lightslategray"
+                        ></i>
+                        <h3 class="whereiam">Notes</h3>
+                    </div>
+                    <i class="fa-solid fa-circle-plus btn-add-note"></i>
+                </div>
+                <div class="search-bar">
+                    <input
+                        type="search"
+                        class="search-input"
+                        placeholder="search"
+                    />
+                </div>
             </div>
-            <div>
-              <input type="button" id="delete" value="" />
-              <input type="button" class="pin" value="" />
-              <input type="button" class="submit-btn" />
+            <div id="notes-card" class="no-items"></div>
+        </section>
+
+        <section class="right-section">
+            <div class="first-page">
+                <img src="./assets/pngegg (1).png" class="arrow" alt="" />
+
+                <p class="quote">
+                    <i>
+                        Either write something worth reading or do something
+                        worth writing.
+                    </i>
+                </p>
             </div>
-          </div>
-          <div class="note-area">
-            <textarea name="note-area" id="note-text" class="note-text"></textarea>
-          </div>
-        </form>
-      </div>
-    </section>
-  </body>
+            <div class="note-head">
+                <form action="index.js" method="post">
+                    <div class="uppernote">
+                        <div>
+                            <input
+                                type="text"
+                                class="note-title-input"
+                                value=""
+                            />
+
+                            <input
+                                type="text"
+                                class="note-tags-input"
+                                placeholder="tags"
+                                maxlength="15"
+                            />
+                        </div>
+                        <div>
+                            <input type="button" id="delete" value="" />
+                            <input type="button" class="pin" value="" />
+                            <input type="button" class="submit-btn" />
+                        </div>
+                    </div>
+                    <div class="note-area">
+                        <textarea
+                            name="note-area"
+                            id="note-text"
+                            class="note-text"
+                        ></textarea>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </body>
 </html>
