@@ -6,6 +6,7 @@ import renderNotesCard from './renderNotesCard.js';
 import reviewNoteCard from './reviewNoteCard.js';
 import PinNote from './pinNote.js';
 import searchBar from './search.js';
+import noItems from './noItems.js';
 export class Note {
     constructor(title, content, date, tag) {
         this.title = title;
@@ -21,6 +22,7 @@ export class Note {
 export class NoteList {
     constructor() {
         this.notes = JSON.parse(localStorage.getItem('notes')) || [];
+        this.updateUI();
     }
 
     saveToLocalStorage(callback) {
@@ -33,7 +35,9 @@ export class NoteList {
     add(note, callback) {
         const newNote = new Note(note.title, note.content, note.date, note.tag);
         this.notes.push(newNote);
-        this.saveToLocalStorage(callback);
+        this.saveToLocalStorage();
+        this.updateUI();
+        if (callback) callback();
     }
 
     remove(note, callback) {
@@ -44,6 +48,7 @@ export class NoteList {
             this.notes.splice(index, 1);
 
             this.saveToLocalStorage();
+            this.updateUI();
             if (callback) {
                 callback();
             }
@@ -54,10 +59,15 @@ export class NoteList {
         note.title = title;
         note.content = content;
         this.saveToLocalStorage();
+        this.updateUI();
     }
 
     getAllNotes() {
         return this.notes;
+    }
+    updateUI() {
+        renderNotesCard(this);
+        noItems();
     }
 }
 export const noteList = new NoteList();

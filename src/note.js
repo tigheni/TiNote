@@ -1,17 +1,15 @@
-import noItems from './noItems.js';
 import renderNotes from './renderNotesCard.js';
+import noItems from './noItems.js';
 import { Elements } from './index.js';
 
 function initializeNoteInput() {
     Elements.noteArea.value = '';
     Elements.tag.value = '';
     Elements.noteTitle.value = 'New Note';
-    noItems();
 }
 
-function handleSaveClick(noteList, e) {
-    if (!Elements.noteArea.value) return e.preventDefault();
-
+function handleSaveClick(noteList) {
+    if (!Elements.noteArea.value) return false;
     const currentDate = new Date();
     const options = {
         weekday: 'long',
@@ -41,7 +39,9 @@ export default function saveNote(noteList) {
     const save = document.querySelector('.submit-btn');
 
     const initializer = () => {
-        save.addEventListener('click', handleSaveClick.bind(null, noteList));
+        save.addEventListener('click', () => {
+            handleSaveClick(noteList);
+        });
         noItems();
     };
 

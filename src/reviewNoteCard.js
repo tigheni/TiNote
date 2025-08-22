@@ -1,5 +1,4 @@
 import { Elements } from './index.js';
-import noItems from './noItems.js';
 import toggleActive from './toggleActive.js';
 import reviewingCard from './reviewingCard.js';
 import { noteList } from './index.js';
@@ -8,7 +7,7 @@ function handleCardClick(e) {
     e.preventDefault();
     const clickedCard = e.target.closest('.card');
 
-    if (!clickedCard) return noItems();
+    if (!clickedCard) return;
     const exterNote = noteList
         .getAllNotes()
         .find((note) => note.id === clickedCard.id);
