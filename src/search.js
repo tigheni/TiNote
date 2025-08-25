@@ -28,12 +28,11 @@ function filteredNotes(searchTerm) {
         notesCard.innerHTML = '<p class="no-notes">No notes found</p>';
 
         return;
-    } else {
-        notesCard.innerHTML = '';
-        filtered.forEach((note) => {
-            cardNote(note);
-        });
     }
+    notesCard.innerHTML = '';
+    filtered.forEach((note) => {
+        cardNote(note);
+    });
 }
 
 export default searchBar;
