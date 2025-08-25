@@ -1,6 +1,7 @@
 import renderNotes from './renderNotesCard.js';
 import noItems from './noItems.js';
 import { Elements } from './index.js';
+import { editNote, editState, editeNote, exitEditMode } from './editNote.js';
 
 function initializeNoteInput() {
     Elements.noteArea.value = '';
@@ -9,23 +10,16 @@ function initializeNoteInput() {
 }
 
 function handleSaveClick(noteList) {
+    if (editState.active) {
+        return editNote(noteList);
+    }
     if (!Elements.noteArea.value) return false;
-    const currentDate = new Date();
-    const options = {
-        weekday: 'long',
-        year: 'numeric',
-        month: 'short',
-        day: 'numeric',
-        hour: 'numeric',
-        minute: 'numeric',
-    };
-    const date = currentDate.toLocaleString('en-us', options);
 
     const note = {
-        title: Elements.noteTitle.value,
+        title: Elements.noteTitle.value || 'Untitled',
         content: Elements.noteArea.value,
-        date,
-        tag: Elements.tag.value,
+        date: new Date().toLocaleString(),
+        tag: Elements.tag.value || 'General',
     };
 
     noteList.add(note, () => {

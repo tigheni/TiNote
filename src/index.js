@@ -7,6 +7,7 @@ import reviewNoteCard from './reviewNoteCard.js';
 import PinNote from './pinNote.js';
 import searchBar from './search.js';
 import noItems from './noItems.js';
+import editNote from './editNote.js';
 export class Note {
     constructor(title, content, date, tag) {
         this.title = title;
@@ -68,6 +69,18 @@ export class NoteList {
     updateUI() {
         renderNotesCard(this);
         noItems();
+    }
+    updateNote(updatedNote) {
+        const index = this.notes.findIndex(
+            (note) => note.id === updatedNote.id
+        );
+
+        if (index !== -1) {
+            this.notes[index] = updatedNote;
+            console.log(this);
+            this.saveToLocalStorage;
+            this.updateUI();
+        }
     }
 }
 export const noteList = new NoteList();
