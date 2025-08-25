@@ -1,5 +1,6 @@
 import { v4 as uuidv4 } from 'uuid';
 import bcrypt from 'bcryptjs';
+import db, { ref, set, get, child } from './src/database/firebase.js';
 
 class User {
     constructor(username, email, password, id) {
@@ -53,3 +54,17 @@ await user.setPassword('oussama');
 await user2.setPassword('tig');
 userManager.addUser(user);
 userManager.addUser(user2);
+console.log(user.username);
+await set(ref(db, `users/${user.id}`), {
+    username: user.username,
+    email: user.email,
+});
+
+const dbRef = ref(db);
+await get(child(dbRef, 'users')).then((snapshot) => {
+    if (snapshot.exists()) {
+        console.log(snapshot.val());
+    } else {
+        console.log('No data available');
+    }
+});

@@ -37,7 +37,10 @@
     "homepage": "https://github.com/tigheni/TiNote#readme",
     "description": "",
     "dependencies": {
+        "@firebasegen/default-connector": "file:dataconnect-generated/js/default-connector",
         "bcryptjs": "^3.0.2",
+        "firebase": "^12.1.0",
+        "firebase-tools": "^14.14.0",
         "uuid": "^11.1.0"
     }
 }
