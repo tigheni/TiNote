@@ -77,10 +77,11 @@ export class NoteList {
 
         if (index !== -1) {
             this.notes[index] = updatedNote;
-            console.log(this);
-            this.saveToLocalStorage;
+            this.saveToLocalStorage();
             this.updateUI();
+            return true;
         }
+        return false;
     }
 }
 export const noteList = new NoteList();

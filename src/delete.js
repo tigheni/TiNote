@@ -8,6 +8,7 @@ export async function deleteNote(noteList, noteId) {
         .find((note) => String(note.id) === String(noteId));
     if (noteToDelete) {
         await noteList.remove(noteToDelete);
+        displayNoteInputs();
     }
 }
 
