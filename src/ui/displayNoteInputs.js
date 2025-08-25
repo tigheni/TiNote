@@ -1,4 +1,4 @@
-import { Elements } from './index.js';
+import { Elements } from '../index.js';
 export default function displayNoteInputs(welcomeNote) {
     if (Elements.firstPage && welcomeNote) {
         Elements.noteHead.style.display = 'block';

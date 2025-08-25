@@ -1,4 +1,4 @@
-import displayNoteInputs from './displayNoteInputs.js';
+import displayNoteInputs from './ui/displayNoteInputs.js';
 
 const notesCard = document.querySelector('#notes-card');
 

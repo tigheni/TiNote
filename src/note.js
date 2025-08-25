@@ -1,5 +1,5 @@
-import renderNotes from './renderNotesCard.js';
-import noItems from './noItems.js';
+import renderNotes from './ui/renderNotesCard.js';
+import noItems from './ui/noItems.js';
 import { Elements } from './index.js';
 import { editNote, editState, editeNote, exitEditMode } from './editNote.js';
 

@@ -1,5 +1,5 @@
 import { Elements } from './index.js';
-import renderNotes from './renderNotesCard.js';
+import renderNotes from './ui/renderNotesCard.js';
 
 const togglePinStatus = (noteList) => {
     const cardsArr = Array.from(document.querySelectorAll('.card'));

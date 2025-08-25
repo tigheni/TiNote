@@ -1,4 +1,4 @@
-import cardNote from './cardNote.js';
+import cardNote from './ui/cardNote.js';
 import { noteList } from './index.js';
 const notesCard = document.getElementById('notes-card');
 function searchBar() {

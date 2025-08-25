@@ -1,12 +1,12 @@
 import './style.css';
 import deleteCardEventListener from './delete.js';
-import insertNoteInput from './insertNoteInput.js';
+import insertNoteInput from './ui/insertNoteInput.js';
 import saveNote from './note.js';
-import renderNotesCard from './renderNotesCard.js';
-import reviewNoteCard from './reviewNoteCard.js';
+import renderNotesCard from './ui/renderNotesCard.js';
+import reviewNoteCard from './ui/reviewNoteCard.js';
 import PinNote from './pinNote.js';
 import searchBar from './search.js';
-import noItems from './noItems.js';
+import noItems from './ui/noItems.js';
 import editNote from './editNote.js';
 export class Note {
     constructor(title, content, date, tag) {

@@ -1,6 +1,6 @@
 import { Elements } from './index.js';
-import noItems from './noItems.js';
-import renderNotes from './renderNotesCard.js';
+import noItems from './ui/noItems.js';
+import renderNotes from './ui/renderNotesCard.js';
 
 export const editState = {
     active: false,

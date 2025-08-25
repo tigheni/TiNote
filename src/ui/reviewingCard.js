@@ -1,4 +1,4 @@
-import { Elements } from './index.js';
+import { Elements } from '../index.js';
 
 export default function reviewingCard(exterNote) {
     Elements.firstPage.style.display = 'none';
